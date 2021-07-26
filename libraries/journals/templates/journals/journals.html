@@ -1,0 +1,43 @@
+<head>
+<meta charset="UTF-8">
+<title>Dalhousie Journal Assessment Database</title>
+</head>
+<body>
+<form action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="Submit" name="submit" value="Submit"/>
+</form>
+
+
+<h1>{{Search}}</h1>
+<table border="1" width="600">
+
+<tr>
+<th>Electronic ISSN</th>
+<th>Print ISSN</th>
+<th>Name</th>
+<th>Quick Recommend</th>
+</tr> 
+
+{% for journal in result %}
+<tr>
+<td>{{ journal.E_ISSN }}</td>
+<td>{{ journal.P_ISSN }}</td>
+<td>
+   <a href="{% url 'journal_detail' journal.id %}"><h3>{{journal.Title }}</h3></a>  </td>
+<td><button onclick="myFunction()">Needed</button></td>
+</tr>
+{% endfor %}
+</table> 
+{% if result.has_previous %}
+<a href="{% url 'journals' %}?page={{result.previous_page_number}}">Previous Page</a> 
+{% endif %}
+{% if result.has_next %}
+<a href="{% url 'journals' %}?page={{result.next_page_number}}">Next Page</a> 
+{% endif %}
+
+
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>

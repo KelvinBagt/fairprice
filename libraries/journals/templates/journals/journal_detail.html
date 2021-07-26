@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dalhousie Journal Assesment Database</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+ 
+<div class="information" >
+   
+  <div class="panel panel-default">
+    <div class="panel-heading" ><h3>{{ journal.Title }}</h3></div>
+    <div class="panel-body">
+    
+    <div> 
+      <a href="{{ journal.URL }}">View This Jounal</a>  
+    </div>
+    <h2> Information </h2>        
+    <h3>Electronic ISSN: {{ journal.E_ISSN }}</h3>
+    <h3>Print ISSN: {{ journal.P_ISSN }}</h3>
+    <h3>Title: {{ journal.Title }}</h3> 
+    <h2> Categories </h2>     
+    <h3>Subjects: {{ journal.Subject }}</h3>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
